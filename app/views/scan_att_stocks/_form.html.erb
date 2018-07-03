@@ -1,0 +1,17 @@
+
+<%= simple_form_for(@scan_att_stock) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :filepath %>
+    <%= f.input :typeV %>
+    <%= f.input :qty %>
+    <%= f.input :du %>
+    <%= f.input :au %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

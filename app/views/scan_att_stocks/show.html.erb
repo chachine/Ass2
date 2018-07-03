@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Filepath:</strong>
+  <%= @scan_att_stock.filepath %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @scan_att_stock.typeV %>
+</p>
+
+<p>
+  <strong>Qty:</strong>
+  <%= @scan_att_stock.qty %>
+</p>
+
+<p>
+  <strong>Du:</strong>
+  <%= @scan_att_stock.du %>
+</p>
+
+<p>
+  <strong>Au:</strong>
+  <%= @scan_att_stock.au %>
+</p>
+
+<ul class="list-group">
+<% @new_stock.each do |a| %>
+<li class="list-group-item">Attestation n:<%= a.numero %> Type: <%= a.typeV %> Created at: <%= a.created_at%></li>
+<% end %>
+</ul>
+
+<%= link_to 'Edit', edit_scan_att_stock_path(@scan_att_stock) %> |
+<%= link_to 'Back', scan_att_stocks_path %>

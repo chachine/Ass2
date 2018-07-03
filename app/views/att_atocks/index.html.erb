@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Att Atocks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Numero</th>
+      <th>Used</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @att_atocks.each do |att_atock| %>
+      <tr>
+        <td><%= att_atock.type %></td>
+        <td><%= att_atock.numero %></td>
+        <td><%= att_atock.used %></td>
+        <td><%= link_to 'Show', att_atock %></td>
+        <td><%= link_to 'Edit', edit_att_atock_path(att_atock) %></td>
+        <td><%= link_to 'Destroy', att_atock, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Att Atock', new_att_atock_path %>

@@ -1,0 +1,2 @@
+class AttAtock < ApplicationRecord
+end
