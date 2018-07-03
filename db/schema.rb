@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_01_052331) do
+ActiveRecord::Schema.define(version: 2018_07_03_182021) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2018_07_01_052331) do
     t.bigint "scan_att_stock_id"
     t.string "typeV"
     t.string "numero"
-    t.boolean "used" default: 0
+    t.boolean "used"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["scan_att_stock_id"], name: "index_att_atocks_on_scan_att_stock_id"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 2018_07_01_052331) do
     t.integer "au"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "le"
   end
 
   create_table "users", force: :cascade do |t|

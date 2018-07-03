@@ -25,9 +25,14 @@
   <%= @scan_att_stock.au %>
 </p>
 
+<p>
+  <strong>Le:</strong>
+  <%= @scan_att_stock.le %>
+</p>
+
 <ul class="list-group">
 <% @new_stock.each do |a| %>
-<li class="list-group-item">Attestation n:<%= a.numero %> Type: <%= a.typeV %> Created at: <%= a.created_at%></li>
+<li class="list-group-item">Attestation n:<%= a.numero %> Type: <%= a.typeV %> Recu le: <%= a.scan_att_stock.le %></li>
 <% end %>
 </ul>
 
