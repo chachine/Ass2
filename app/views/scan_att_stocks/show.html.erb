@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Filepath:</strong>
-  <%= @scan_att_stock.filepath %>
+  <strong>image</strong>
+  <%= cl_image_tag @scan_att_stock.filepath, height: 300, width: 400, crop: :fill %>
 </p>
 
 <p>
