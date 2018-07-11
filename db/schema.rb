@@ -10,30 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_03_182021) do
+ActiveRecord::Schema.define(version: 2018_07_01_052331) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "att_atocks", force: :cascade do |t|
+  create_table "att_stocks", force: :cascade do |t|
     t.bigint "scan_att_stock_id"
-    t.string "typeV"
-    t.string "numero"
-    t.boolean "used"
+    t.string "typeV", null: false
+    t.string "numero", null: false
+    t.boolean "used", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["scan_att_stock_id"], name: "index_att_atocks_on_scan_att_stock_id"
+    t.index ["scan_att_stock_id"], name: "index_att_stocks_on_scan_att_stock_id"
   end
 
   create_table "scan_att_stocks", force: :cascade do |t|
     t.string "filepath"
-    t.string "typeV"
-    t.integer "qty"
-    t.integer "du"
-    t.integer "au"
+    t.date "le", null: false
+    t.string "typeV", null: false
+    t.integer "qty", null: false
+    t.integer "du", null: false
+    t.integer "au", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.datetime "le"
   end
 
   create_table "users", force: :cascade do |t|

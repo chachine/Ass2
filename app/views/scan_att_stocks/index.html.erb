@@ -5,7 +5,7 @@
 <table>
   <thead>
     <tr>
-      <th>Filepath</th>
+
       <th>Type</th>
       <th>Qty</th>
       <th>Du</th>
@@ -17,8 +17,8 @@
   <tbody>
     <% @scan_att_stocks.each do |scan_att_stock| %>
       <tr>
-        <td><%= scan_att_stock.filepath %></td>
-        <td><%= scan_att_stock.type %></td>
+
+        <td><%= scan_att_stock.typeV %></td>
         <td><%= scan_att_stock.qty %></td>
         <td><%= scan_att_stock.du %></td>
         <td><%= scan_att_stock.au %></td>

@@ -20,10 +20,12 @@ gem 'webpacker'
 
 gem 'cloudinary'
 gem 'carrierwave', '~> 1.2'
-
+gem 'ocr_space'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
+  gem "better_errors"
+  gem "binding_of_caller"
 end
 
 group :development, :test do

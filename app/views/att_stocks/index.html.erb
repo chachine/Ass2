@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Att Stocks</h1>
+<div class="row">
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Numero</th>
+      <th>Used</th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @att_atocks.each do |att_atock| %>
+      <tr>
+        <td><%= att_atock.typeV %></td>
+        <td><%= att_atock.numero %></td>
+        <td><%= att_atock.used %></td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>
+
+<br>
+
+
