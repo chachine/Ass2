@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Titre:</strong>
+  <%= @souscripteur.titre %>
+</p>
+
+<p>
+  <strong>Nom:</strong>
+  <%= @souscripteur.nom %>
+</p>
+
+<%= link_to 'Edit', edit_souscripteur_path(@souscripteur) %> |
+<%= link_to 'Back', souscripteurs_path %>

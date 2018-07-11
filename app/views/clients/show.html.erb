@@ -1,0 +1,79 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nom:</strong>
+  <%= @client.nom %>
+</p>
+
+<p>
+  <strong>Prenom:</strong>
+  <%= @client.prenom %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @client.address %>
+</p>
+
+<p>
+  <strong>Ville:</strong>
+  <%= @client.ville %>
+</p>
+
+<p>
+  <strong>Pays:</strong>
+  <%= @client.pays %>
+</p>
+
+<p>
+  <strong>Date naissance:</strong>
+  <%= @client.date_naissance %>
+</p>
+
+<p>
+  <strong>Lieu naissance:</strong>
+  <%= @client.lieu_naissance %>
+</p>
+
+<p>
+  <strong>Sexe:</strong>
+  <%= @client.sexe %>
+</p>
+
+<p>
+  <strong>Cin:</strong>
+  <%= @client.cin %>
+</p>
+
+<p>
+  <strong>Date val cin:</strong>
+  <%= @client.date_val_cin %>
+</p>
+
+<p>
+  <strong>Num permis:</strong>
+  <%= @client.num_permis %>
+</p>
+
+<p>
+  <strong>Cat permis:</strong>
+  <%= @client.cat_permis %>
+</p>
+
+<p>
+  <strong>Lieu permis:</strong>
+  <%= @client.lieu_permis %>
+</p>
+
+<p>
+  <strong>Date permis:</strong>
+  <%= @client.date_permis %>
+</p>
+
+<p>
+  <strong>Date val permis:</strong>
+  <%= @client.date_val_permis %>
+</p>
+
+<%= link_to 'Edit', edit_client_path(@client) %> |
+<%= link_to 'Back', clients_path %>

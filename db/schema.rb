@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_01_052331) do
+ActiveRecord::Schema.define(version: 2018_07_11_150324) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,29 @@ ActiveRecord::Schema.define(version: 2018_07_01_052331) do
     t.index ["scan_att_stock_id"], name: "index_att_stocks_on_scan_att_stock_id"
   end
 
+  create_table "clients", force: :cascade do |t|
+    t.string "nom"
+    t.string "prenom"
+    t.string "address"
+    t.string "ville"
+    t.string "pays"
+    t.date "date_naissance"
+    t.string "lieu_naissance"
+    t.string "sexe"
+    t.string "type_id"
+    t.string "cin"
+    t.date "date_val_cin"
+    t.string "num_permis"
+    t.string "cat_permis"
+    t.string "lieu_permis"
+    t.date "date_permis"
+    t.date "date_val_permis"
+    t.integer "tel"
+    t.integer "tel_whatsapp"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "scan_att_stocks", force: :cascade do |t|
     t.string "filepath"
     t.date "le", null: false
@@ -32,6 +55,13 @@ ActiveRecord::Schema.define(version: 2018_07_01_052331) do
     t.integer "qty", null: false
     t.integer "du", null: false
     t.integer "au", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "souscripteurs", force: :cascade do |t|
+    t.string "titre"
+    t.string "nom"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -51,6 +81,32 @@ ActiveRecord::Schema.define(version: 2018_07_01_052331) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "vehicules", force: :cascade do |t|
+    t.string "matricule"
+    t.string "matricule_ant"
+    t.date "date_mc"
+    t.date "date_mc_maroc"
+    t.date "date_mutation"
+    t.string "usage"
+    t.string "proprietaire"
+    t.string "address"
+    t.date "date_val_cgrise"
+    t.string "marque"
+    t.string "type_cgrise"
+    t.string "genre"
+    t.string "modele"
+    t.string "carburant"
+    t.string "chassis"
+    t.integer "cylindre"
+    t.integer "cv"
+    t.integer "place"
+    t.integer "ptac"
+    t.integer "poids"
+    t.integer "ptmct"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

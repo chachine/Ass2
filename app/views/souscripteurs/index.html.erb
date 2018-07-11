@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Souscripteurs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Titre</th>
+      <th>Nom</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @souscripteurs.each do |souscripteur| %>
+      <tr>
+        <td><%= souscripteur.titre %></td>
+        <td><%= souscripteur.nom %></td>
+        <td><%= link_to 'Show', souscripteur %></td>
+        <td><%= link_to 'Edit', edit_souscripteur_path(souscripteur) %></td>
+        <td><%= link_to 'Destroy', souscripteur, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Souscripteur', new_souscripteur_path %>

@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :vehicules
+  resources :souscripteurs
+  resources :clients
   resources :att_stocks, only: [:index]
   resources :scan_att_stocks
   devise_for :users
