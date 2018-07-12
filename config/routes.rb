@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :cheques
+  resources :cashes
+  resources :factures
   resources :vehicules
   resources :souscripteurs
   resources :clients

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_12_010656) do
+ActiveRecord::Schema.define(version: 2018_07_12_184005) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,28 @@ ActiveRecord::Schema.define(version: 2018_07_12_010656) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["scan_att_stock_id"], name: "index_att_stocks_on_scan_att_stock_id"
+  end
+
+  create_table "cashes", force: :cascade do |t|
+    t.integer "montant"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "encaissement_id"
+    t.index ["encaissement_id"], name: "index_cashes_on_encaissement_id"
+  end
+
+  create_table "cheques", force: :cascade do |t|
+    t.string "banque"
+    t.integer "numero"
+    t.string "nom"
+    t.decimal "montant"
+    t.string "etat"
+    t.date "date_reception"
+    t.date "date_encaissement"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "encaissement_id"
+    t.index ["encaissement_id"], name: "index_cheques_on_encaissement_id"
   end
 
   create_table "clients", force: :cascade do |t|
@@ -47,6 +69,21 @@ ActiveRecord::Schema.define(version: 2018_07_12_010656) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "scan"
+  end
+
+  create_table "encaissements", force: :cascade do |t|
+    t.string "user"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "facture_id"
+    t.index ["facture_id"], name: "index_encaissements_on_facture_id"
+  end
+
+  create_table "factures", force: :cascade do |t|
+    t.decimal "montant"
+    t.decimal "montant_recu"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "scan_att_stocks", force: :cascade do |t|
@@ -111,4 +148,7 @@ ActiveRecord::Schema.define(version: 2018_07_12_010656) do
     t.string "scan"
   end
 
+  add_foreign_key "cashes", "encaissements"
+  add_foreign_key "cheques", "encaissements"
+  add_foreign_key "encaissements", "factures"
 end

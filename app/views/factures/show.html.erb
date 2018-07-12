@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Montant:</strong>
+  <%= @facture.montant %>
+</p>
+
+<p>
+  <strong>Montant recu:</strong>
+  <%= @facture.montant_recu %>
+</p>
+
+<%= link_to 'Edit', edit_facture_path(@facture) %> |
+<%= link_to 'Back', factures_path %>
