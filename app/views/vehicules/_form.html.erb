@@ -19,11 +19,11 @@
     <%= f.input :type_cgrise %>
     <%= f.input :genre %>
     <%= f.input :modele %>
-    <%= f.input :carburant %>
+    <%= f.input :carburant, :as =>:select, :collection => %w(D E) %>
     <%= f.input :chassis %>
-    <%= f.input :cylindre %>
-    <%= f.input :cv %>
-    <%= f.input :place %>
+    <%= f.input :cylindre, :as => :select, :collection => 1..12 %>
+    <%= f.input :cv, :as => :select, :collection => 1..18 %>
+    <%= f.input :place, :collection => 0..99 %>
     <%= f.input :ptac %>
     <%= f.input :poids %>
     <%= f.input :ptmct %>
