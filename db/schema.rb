@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_12_184005) do
+ActiveRecord::Schema.define(version: 2018_07_14_023831) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -69,6 +69,21 @@ ActiveRecord::Schema.define(version: 2018_07_12_184005) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "scan"
+    t.bigint "devi_id"
+    t.index ["devi_id"], name: "index_clients_on_devi_id"
+  end
+
+  create_table "devis", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "client_id"
+    t.bigint "vehicule_id"
+    t.bigint "souscripteur_id"
+    t.bigint "facture_id"
+    t.index ["client_id"], name: "index_devis_on_client_id"
+    t.index ["facture_id"], name: "index_devis_on_facture_id"
+    t.index ["souscripteur_id"], name: "index_devis_on_souscripteur_id"
+    t.index ["vehicule_id"], name: "index_devis_on_vehicule_id"
   end
 
   create_table "encaissements", force: :cascade do |t|
@@ -150,5 +165,10 @@ ActiveRecord::Schema.define(version: 2018_07_12_184005) do
 
   add_foreign_key "cashes", "encaissements"
   add_foreign_key "cheques", "encaissements"
+  add_foreign_key "clients", "devis"
+  add_foreign_key "devis", "clients"
+  add_foreign_key "devis", "factures"
+  add_foreign_key "devis", "souscripteurs"
+  add_foreign_key "devis", "vehicules"
   add_foreign_key "encaissements", "factures"
 end

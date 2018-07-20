@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Devis</h1>
+<%= @devi.to_s %>
+
+<h2>Devis id: </h2>
+
+<%= @devi.id%>
+
+<h2>Client name:</h2>
+<br>
+<%= @devi.client.nom %>
+<br>
+<%= @devi.client.prenom %>
+
+
+<%= link_to 'Edit', edit_devi_path(@devi) %> |
+<%= link_to 'Back', devis_path %>

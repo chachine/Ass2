@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :devis
   resources :cheques
   resources :cashes
   resources :factures

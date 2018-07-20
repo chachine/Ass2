@@ -1,0 +1,34 @@
+
+<%= simple_form_for(@devi) do |f| %>
+
+      <%= f.simple_fields_for :client, @devi.client do |c| %>
+        <%= c.input :scan %>
+        <%= c.input :scan_cache, as: :hidden%>
+        <%= c.input :nom %>
+        <%= c.input :prenom %>
+        <%= c.input :address %>
+        <%= c.input :ville %>
+        <%= c.input :pays %>
+        <%= c.input :date_naissance %>
+        <%= c.input :lieu_naissance %>
+        <%= c.input :sexe , :as => :select, :collection => %w(M F) %>
+        <%= c.input :cin %>
+        <%= c.input :date_val_cin %>
+        <%= c.input :num_permis %>
+        <%= c.input :cat_permis,:as => :select, :collection => %w(A1 A B C D EB EC ED) %>
+        <%= c.input :lieu_permis %>
+        <%= c.input :date_permis %>
+        <%= c.input :date_val_permis %>
+        <%= c.input :tel %>
+        <%= c.input :tel_whatsapp %>
+
+      <% end %>
+
+
+    <div class="form-inputs">
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit %>
+    </div>
+<% end %>

@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <<th>Scan</th>
       <th>Nom</th>
       <th>Prenom</th>
       <th>Address</th>
@@ -27,6 +28,7 @@
   <tbody>
     <% @clients.each do |client| %>
       <tr>
+        <td><%= cl_image_tag client.scan %><td>
         <td><%= client.nom %></td>
         <td><%= client.prenom %></td>
         <td><%= client.address %></td>
