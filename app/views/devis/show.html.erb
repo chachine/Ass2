@@ -1,18 +1,140 @@
-<p id="notice"><%= notice %></p>
+<p id="notice"><%= notice %>
 
 <h1>Devis</h1>
+
 <%= @devi.to_s %>
 
 <h2>Devis id: </h2>
 
-<%= @devi.id%>
+<%= @devi.id %>
 
-<h2>Client name:</h2>
-<br>
-<%= @devi.client.nom %>
-<br>
-<%= @devi.client.prenom %>
 
+<div class="container">
+  <div class="row">
+    <div class="col-4">
+      <strong>Scan</strong>
+  <%= cl_image_tag @vehicule.scan %>
+
+  <strong>Matricule:</strong>
+  <%= @vehicule.matricule %>
+
+
+  <strong>Matricule ant:</strong>
+  <%= @vehicule.matricule_ant %>
+
+
+  <strong>Date mc:</strong>
+  <%= @vehicule.date_mc %>
+
+  <strong>Date mc maroc:</strong>
+  <%= @vehicule.date_mc_maroc %>
+
+  <strong>Date mutation:</strong>
+  <%= @vehicule.date_mutation %>
+
+  <strong>Usage:</strong>
+  <%= @vehicule.usage %>
+
+  <strong>Proprietaire:</strong>
+  <%= @vehicule.proprietaire %>
+
+  <strong>Address:</strong>
+  <%= @vehicule.address %>
+
+  <strong>Date val cgrise:</strong>
+  <%= @vehicule.date_val_cgrise %>
+
+  <strong>Marque:</strong>
+  <%= @vehicule.marque %>
+
+  <strong>Type cgrise:</strong>
+  <%= @vehicule.type_cgrise %>
+
+  <strong>Genre:</strong>
+  <%= @vehicule.genre %>
+
+  <strong>Modele:</strong>
+  <%= @vehicule.modele %>
+
+  <strong>Carburant:</strong>
+  <%= @vehicule.carburant %>
+
+  <strong>Chassis:</strong>
+  <%= @vehicule.chassis %>
+
+  <strong>Cylindre:</strong>
+  <%= @vehicule.cylindre %>
+
+  <strong>Cv:</strong>
+  <%= @vehicule.cv %>
+
+  <strong>Place:</strong>
+  <%= @vehicule.place %>
+
+  <strong>Ptac:</strong>
+  <%= @vehicule.ptac %>
+
+  <strong>Poids:</strong>
+  <%= @vehicule.poids %>
+
+  <strong>Ptmct:</strong>
+  <%= @vehicule.ptmct %>
+    </div>
+    <div class="col-4">
+    Scan</strong>
+  <%= cl_image_tag @client.scan %>
+
+
+  <strong>Nom:</strong>
+  <%= @client.nom %>
+
+  <strong>Prenom:</strong>
+  <%= @client.prenom %>
+
+  <strong>Address:</strong>
+  <%= @client.address %>
+
+  <strong>Ville:</strong>
+  <%= @client.ville %>
+
+  <strong>Pays:</strong>
+  <%= @client.pays %>
+
+  <strong>Date naissance:</strong>
+  <%= @client.date_naissance %>
+
+  <strong>Lieu naissance:</strong>
+  <%= @client.lieu_naissance %>
+
+  <strong>Sexe:</strong>
+  <%= @client.sexe %>
+
+  <strong>Cin:</strong>
+  <%= @client.cin %>
+
+  <strong>Date val cin:</strong>
+  <%= @client.date_val_cin %>
+
+  <strong>Num permis:</strong>
+  <%= @client.num_permis %>
+
+  <strong>Cat permis:</strong>
+  <%= @client.cat_permis %>
+
+  <strong>Lieu permis:</strong>
+  <%= @client.lieu_permis %>
+
+  <strong>Date permis:</strong>
+  <%= @client.date_permis %>
+
+  <strong>Date val permis:</strong>
+  <%= @client.date_val_permis %>
+    </div>
+    <div class="col-sm">
+      One of three columns
+    </div>
+  </div>
+</div>
 
 <%= link_to 'Edit', edit_devi_path(@devi) %> |
 <%= link_to 'Back', devis_path %>

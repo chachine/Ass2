@@ -1,6 +1,6 @@
 
 <%= simple_form_for(@devi) do |f| %>
-
+    <div class="form-inputs">
       <%= f.simple_fields_for :client, @devi.client do |c| %>
         <%= c.input :scan %>
         <%= c.input :scan_cache, as: :hidden%>
@@ -21,12 +21,46 @@
         <%= c.input :date_val_permis %>
         <%= c.input :tel %>
         <%= c.input :tel_whatsapp %>
-
       <% end %>
+      </div>
+
+      </div>
+      <div class="form-inputs">
+       <%= f.simple_fields_for :vehicule, @devi.vehicule do |v| %>
+       <%= v.input :scan %>
+        <%= v.input :scan_cache, as: :hidden %>
+        <%= v.input :matricule %>
+        <%= v.input :matricule_ant %>
+        <%= v.input :date_mc %>
+        <%= v.input :date_mc_maroc %>
+        <%= v.input :date_mutation %>
+        <%= v.input :usage %>
+        <%= v.input :proprietaire %>
+        <%= v.input :address %>
+        <%= v.input :date_val_cgrise %>
+        <%= v.input :marque %>
+        <%= v.input :type_cgrise %>
+        <%= v.input :genre %>
+        <%= v.input :modele %>
+        <%= v.input :carburant, :as =>:select, :collection => %w(D E) %>
+        <%= v.input :chassis %>
+        <%= v.input :cylindre, :as => :select, :collection => 1..12 %>
+        <%= v.input :cv, :as => :select, :collection => 1..18 %>
+        <%= v.input :place, :collection => 0..99 %>
+        <%= v.input :ptac %>
+        <%= v.input :poids %>
+        <%= v.input :ptmct %>
+       <% end %>
+      </div>
+
+        <div class="form-inputs">
+        <%= f.simple_fields_for :souscripteur, @devi.souscripteur do |s| %>
+          <%= s.input :titre , :as => :select, :collection => %w(Mr Mm Ste) %>
+          <%= s.input :nom %>
+        </div>
+         <% end %>
 
 
-    <div class="form-inputs">
-    </div>
 
     <div class="form-actions">
       <%= f.button :submit %>

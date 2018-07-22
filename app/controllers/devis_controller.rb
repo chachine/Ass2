@@ -11,12 +11,19 @@ class DevisController < ApplicationController
   # GET /devis/1.json
   def show
     @devi = Devi.find(params[:id])
+    @client = @devi.client
+    @vehicule = @devi.vehicule
   end
 
   # GET /devis/new
   def new
     @devi = Devi.new
-   @devi.build_client
+     @devi.build_client
+     @devi.vehicule = Vehicule.new
+    @devi.build_vehicule
+    # @devi.souscripteur = Souscipteur.new
+    @devi.build_souscripteur
+
   end
 
   # GET /devis/1/edit
@@ -72,6 +79,15 @@ class DevisController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def devi_params
       # params.fetch(:devi, {})
-      params.require(:devi).permit(client_attributes: [:id,:nom, :prenom, :address, :ville, :pays, :date_naissance, :lieu_naissance, :sexe, :cin, :date_val_cin, :num_permis, :cat_permis, :lieu_permis, :date_permis, :date_val_permis, :scan])
+      params.require(:devi).permit(client_attributes: [:id,:nom, :prenom, :address, :ville, :pays, :date_naissance, :lieu_naissance, :sexe, :cin, :date_val_cin, :num_permis, :cat_permis, :lieu_permis, :date_permis, :date_val_permis, :scan,:tel, :tel_whatsapp],
+                                  vehicule_attributes: [:scan_cache, :matricule, :matricule_ant, :date_mc, :date_mc_maroc,
+                                        :date_mutation, :usage, :proprietaire,
+                                        :address, :date_val_cgrise, :marque,
+                                        :type_cgrise, :genre, :modele,
+                                        :carburant, :chassis, :cylindre, :cv,
+                                        :place, :ptac, :poids, :ptmct, :scan, :scan_cache],
+                                        souscripteur_attributes: [:titre, :nom]
+
+                                  )
     end
 end

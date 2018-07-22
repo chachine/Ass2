@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_14_023831) do
+ActiveRecord::Schema.define(version: 2018_07_21_010414) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -117,6 +117,8 @@ ActiveRecord::Schema.define(version: 2018_07_14_023831) do
     t.string "nom"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "devi_id"
+    t.index ["devi_id"], name: "index_souscripteurs_on_devi_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -161,6 +163,8 @@ ActiveRecord::Schema.define(version: 2018_07_14_023831) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "scan"
+    t.bigint "devi_id"
+    t.index ["devi_id"], name: "index_vehicules_on_devi_id"
   end
 
   add_foreign_key "cashes", "encaissements"
@@ -171,4 +175,6 @@ ActiveRecord::Schema.define(version: 2018_07_14_023831) do
   add_foreign_key "devis", "souscripteurs"
   add_foreign_key "devis", "vehicules"
   add_foreign_key "encaissements", "factures"
+  add_foreign_key "souscripteurs", "devis"
+  add_foreign_key "vehicules", "devis"
 end
